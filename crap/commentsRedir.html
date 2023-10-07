@@ -3,15 +3,12 @@
 </head>
 <body>
 <center>
-You will be automatically redirected... Please wait...
+You will be taken to the comments section for this post.<br>
+If the redirect fails, it is likely one of the following issues:<br>
+1. Your browser does not support HTTPS<br>
+2. Your browser does not support JavaScript
 <script>
-var idcomments_acct = '5b7aa08457a3d92bbc69908961ede1af';
-var idcomments_post_id;
-var idcomments_post_url;
-window.addEventListener('load', function () {
-  alert(document.getElementsByTagName("a")[0]);
-})
+window.location.href = "https://www.intensedebate.com/commentPopup.php?acct=5b7aa08457a3d92bbc69908961ede1af&postid=" + window.location.href + "&posttitle=&posturl=" + window.location.href;
 </script>
-<script type="text/javascript" src="https://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 </center>
 </body>
