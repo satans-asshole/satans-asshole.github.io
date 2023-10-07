@@ -3,14 +3,12 @@
 </head>
 <body>
 <center>
-<span style="background-color: #FFFF00">There appears to currently be some problems with posting comments on certain browsers. I'm working my best to figure out as soon as I can what's wrong.</span><br>
-<h1>Comments for <i><script>document.write(location.search.replace('?', ''))</script></i></h1><br>
+You will be taken to the comments section for this post.<br>
+If the redirect fails, it is likely one of the following issues:<br>
+1. Your browser does not support HTTPS<br>
+2. Your browser does not support JavaScript
 <script>
-var idcomments_acct = '5b7aa08457a3d92bbc69908961ede1af';
-var idcomments_post_id;
-var idcomments_post_url;
+window.location.href = "https://www.intensedebate.com/commentPopup.php?acct=5b7aa08457a3d92bbc69908961ede1af&postid=" + window.location.href + "&posttitle=&posturl=" + window.location.href;
 </script>
-<span id="IDCommentsPostTitle" style="display:none"></span>
-<script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 </center>
 </body>
