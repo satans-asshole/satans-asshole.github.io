@@ -1,0 +1,24 @@
+<head>
+<title>Picture</title>
+</head>
+<body>
+<center>
+<script>
+document.write('<a onclick="viewswitch()" href="javascript:void(0);" id="ln">[ view full image ]</a><br> <div id="im"> <img src="img/preview/' + location.search.replace('?', '').replace('$', '/') + '"></div><br><a href="comments.html?' + location.search.replace('?', '') + '" target="_blank">&gt go to comments');
+full = false;
+imge = document.getElementById('ln');
+imgv = document.getElementById('im');
+function viewswitch() {
+if (full) {
+full = false;
+imge.innerHTML = imge.innerHTML.replace('original', 'full');
+imgv.innerHTML = '<img src="img/preview/' + location.search.replace('?', '').replace('$', '/') + '">'
+} else {
+full = true;
+imge.innerHTML = imge.innerHTML.replace('full', 'original');
+imgv.innerHTML = '<img src="img/' + location.search.replace('?', '').replace('$', '/') + '">'
+}
+}
+</script>
+</center>
+</body>
