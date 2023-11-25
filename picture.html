@@ -4,21 +4,11 @@
 <body>
 <center>
 <script>
-document.write('<a onclick="viewswitch()" href="javascript:void(0);" id="ln">[ view full image ]</a><br><img src="img/preview/' + location.search.replace('?', '').replace('$', '/') + '" id="im"><br><a href="comments.html?' + location.search.replace('?', '') + '" target="_blank">&gt go to comments');
-full = false;
-imge = document.getElementById('ln');
-imgv = document.getElementById('im');
-function viewswitch() {
-if (full) {
-full = false;
-imge.innerHTML = imge.innerHTML.replace('original', 'full');
-imgv.src = 'img/preview/' + location.search.replace('?', '').replace('$', '/')
+if (location.search.match(/[?]/g).length == 1) {
+document.write('<a href="?' + location.search.replace(/[?]/g, '') + '?" id="ln">[ view full image ]</a><br><img src="img/preview/' + location.search.replace(/[?]/g, '').replace('$', '/') + '" id="im"><br><a href="comments.html?' + location.search.replace(/[?]/g, '') + '" target="_blank">&gt go to comments</a>');
 } else {
-full = true;
-imge.innerHTML = imge.innerHTML.replace('full', 'original');
-imgv.src = 'img/' + location.search.replace('?', '').replace('$', '/')
-}
+document.write('<a href="?' + location.search.replace(/[?]/g, '') + '" id="ln">[ view original image ]</a><br><img src="img/' + location.search.replace(/[?]/g, '').replace('$', '/') + '" id="im"><br><a href="comments.html?' + location.search.replace(/[?]/g, '') + '" target="_blank">&gt go to comments</a>');
 }
 </script>
 </center>
-<body>
+</body>
