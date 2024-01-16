@@ -4,11 +4,16 @@
 <body>
 <center>
 <script>
+imgfile = location.search.replace(/[?]/g, '');
 if (location.search.match(/[?]/g).length == 1) {
-document.write('<a href="?' + location.search.replace(/[?]/g, '') + '?" id="ln">[ view full image ]</a><br><img src="img/preview/' + location.search.replace(/[?]/g, '').replace('$', '/') + '" id="im"><br><a href="comments.html?' + location.search.replace(/[?]/g, '') + '" target="_blank">&gt go to comments</a>');
-} else {
-document.write('<a href="?' + location.search.replace(/[?]/g, '') + '" id="ln">[ view original image ]</a><br><img src="img/' + location.search.replace(/[?]/g, '').replace('$', '/') + '" id="im"><br><a href="comments.html?' + location.search.replace(/[?]/g, '') + '" target="_blank">&gt go to comments</a>');
+document.write('<a href="?' + imgfile + '?">[ view full image ]</a><br><img src="img/preview/' + imgfile.replace('$', '/') + '">');
+if (imgfile.slice(-4) == '.gif') {
+document.write('<br>This is an animated GIF. Please click [ view full image ] to view the animation.');
 }
+} else {
+document.write('<a href="?' + imgfile + '">[ view original image ]</a><br><img src="img/' + imgfile.replace('$', '/') + '">');
+}
+document.write('<br><a href="comments.html?' + imgfile + '" target="_blank">&gt go to comments</a>');
 </script>
 </center>
 </body>
